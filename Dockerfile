@@ -15,6 +15,6 @@ RUN ls -a
 EXPOSE 80
 
 # Step 2: Run the application
-ENTRYPOINT [ "java", "-jar","","target/weshare-mvc-exercise-1.0-SNAPSHOT-jar-with-dependencies.jar" ]   
+ENTRYPOINT [ "java", "-jar","target/weshare-mvc-exercise-1.0-SNAPSHOT-jar-with-dependencies.jar" ]   
 
 
