@@ -33,7 +33,7 @@ WORKDIR /app
 COPY . .
 RUN ls -a
 # Copy the built JAR file from the build stage
-COPY --from=build /app/target/weshare-mvc-exercise-1.0-SNAPSHOT.jar /app/robot_worlds.jar
+COPY --from=build /app/target/ /app/
 
 # Expose the port your application runs on
 EXPOSE 80
