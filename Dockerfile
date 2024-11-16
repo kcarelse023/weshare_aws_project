@@ -11,7 +11,8 @@ COPY . .
 RUN mvn clean package -DskipTests
 RUN ls -a
 
+# Expose the port the application will run on
 EXPOSE 80
 
-# Combine `javac` and `java` commands
-CMD ["java", "-jar", ".\target\weshare-mvc-exercise-1.0-SNAPSHOT-jar-with-dependencies.jar"]
+# Step 2: Run the application
+CMD ["java", "-jar", "target/weshare-mvc-exercise-1.0-SNAPSHOT-jar-with-dependencies.jar"]
