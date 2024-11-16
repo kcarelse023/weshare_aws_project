@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Compile the application (skip tests if necessary)
-RUN mvn clean compile -DskipTests
+RUN mvn clean package -DskipTests
 RUN ls -a
 
 # Step 2: Use a lightweight JDK image to run the application
@@ -24,4 +24,4 @@ COPY --from=build /app/target/ /app/target/
 EXPOSE 80
 
 # Combine `javac` and `java` commands
-CMD ["java", "-cp", "target/classes", "weshare.server.WeShareServer"]
+CMD ["java", "-jar", ".\target\weshare-mvc-exercise-1.0-SNAPSHOT-jar-with-dependencies.jar"]
