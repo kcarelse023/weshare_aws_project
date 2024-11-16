@@ -1,4 +1,34 @@
 -------------------------------------------------------------------------------
 Test set: weshare.webtests.PaymentRequestsReceivedPageTests
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.658 s - in weshare.webtests.PaymentRequestsReceivedPageTests
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 4.23 s <<< FAILURE! - in weshare.webtests.PaymentRequestsReceivedPageTests
+weshare.webtests.PaymentRequestsReceivedPageTests.havePaymentRequestsReceived  Time elapsed: 1.387 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 129
+Current browser version is 131.0.6778.69 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe 
+Host info: host: 'KCA', ip: '192.168.1.109'
+Build info: version: '4.24.0', revision: '748ffc9bc3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--no-sandbox, --headless, --disable-gpu, --start-maximized, --start-fullscreen], extensions: []}}]}]
+
+weshare.webtests.PaymentRequestsReceivedPageTests.payPaymentRequestReceived  Time elapsed: 1.443 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 129
+Current browser version is 131.0.6778.69 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe 
+Host info: host: 'KCA', ip: '192.168.1.109'
+Build info: version: '4.24.0', revision: '748ffc9bc3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--no-sandbox, --headless, --disable-gpu, --start-maximized, --start-fullscreen], extensions: []}}]}]
+
+weshare.webtests.PaymentRequestsReceivedPageTests.noPaymentRequestsReceived  Time elapsed: 1.385 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 129
+Current browser version is 131.0.6778.69 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe 
+Host info: host: 'KCA', ip: '192.168.1.109'
+Build info: version: '4.24.0', revision: '748ffc9bc3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--no-sandbox, --headless, --disable-gpu, --start-maximized, --start-fullscreen], extensions: []}}]}]
+
