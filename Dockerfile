@@ -11,16 +11,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 RUN ls -a
 
-# Step 2: Use a lightweight JDK image to run the application
-FROM openjdk:17-jdk-slim
-
-# Set the working directory inside the container
-WORKDIR /app
-
-# Copy the source files from the build stage
-COPY . .
-COPY --from=build /app/target/ /app/target/
-# Expose the port your application runs on
 EXPOSE 80
 
 # Combine `javac` and `java` commands
