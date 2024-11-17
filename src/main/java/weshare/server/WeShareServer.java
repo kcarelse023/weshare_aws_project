@@ -56,6 +56,14 @@ public class WeShareServer {
             config.sessionHandler(sessionHandler());
         });
 
+        appServer.exception(Exception.class, (e, ctx) -> {
+            StringWriter sw = new StringWriter();
+            PrintWriter pw = new PrintWriter(sw);
+            e.printStackTrace(pw);
+            ctx.result(sw.toString());
+        });
+
+        appServer.get("/ping", ctx -> ctx.result("ok"));
         ServiceRegistry.configure(PersonDAO.class, new PersonDAOImpl());
         ServiceRegistry.configure(ExpenseDAO.class, new ExpenseDAOImpl());
         Routes.configure(this);
@@ -126,7 +134,7 @@ public class WeShareServer {
 
     public void start(int port1) {
         int port = System.getenv("PORT") != null ? Integer.parseInt(System.getenv("PORT")) : 80;
-        this.appServer.start("0.0.0.0", port);
+        this.appServer.start("0.0.0.0/0", port);
         System.out.println("Server running on http://0.0.0.0:" + port);
     }
 
