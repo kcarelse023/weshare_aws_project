@@ -60,6 +60,11 @@ public class WeShareServer {
         ServiceRegistry.configure(ExpenseDAO.class, new ExpenseDAOImpl());
         Routes.configure(this);
         configureExceptionsPage();
+
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            System.out.println("SIGTERM signal received. Stopping server...");
+            this.stop();
+        }));
     }
 
     public static void main(String[] args) {
@@ -68,7 +73,7 @@ public class WeShareServer {
 
 
 
-        server.start(80);
+        server.start(1);
     }
 
     @Nullable
@@ -119,8 +124,10 @@ public class WeShareServer {
         appServer.routes(group);
     }
 
-    public void start(int port) {
-        this.appServer.start("0.0.0.0",port);
+    public void start(int port1) {
+        int port = System.getenv("PORT") != null ? Integer.parseInt(System.getenv("PORT")) : 80;
+        this.appServer.start("0.0.0.0", port);
+        System.out.println("Server running on http://0.0.0.0:" + port);
     }
 
     public void stop() {
