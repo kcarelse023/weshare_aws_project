@@ -55,7 +55,11 @@ public class WeShareServer {
             config.accessManager(accessManager());
             config.sessionHandler(sessionHandler());
         });
-
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            System.out.println("SIGTERM signal received. Stopping server...");
+            this.stop();
+            System.exit(0);
+        }));
         appServer.exception(Exception.class, (e, ctx) -> {
             StringWriter sw = new StringWriter();
             PrintWriter pw = new PrintWriter(sw);
@@ -72,10 +76,7 @@ public class WeShareServer {
         Routes.configure(this);
         configureExceptionsPage();
 
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            System.out.println("SIGTERM signal received. Stopping server...");
-            this.stop();
-        }));
+        
     }
 
     public static void main(String[] args) {
