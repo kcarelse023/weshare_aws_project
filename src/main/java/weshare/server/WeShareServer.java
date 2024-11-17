@@ -62,7 +62,10 @@ public class WeShareServer {
             e.printStackTrace(pw);
             ctx.result(sw.toString());
         });
-
+        appServer.get("/hello/:name", ctx -> {
+            String name = ctx.pathParam("name");
+            ctx.result("Hello, " + name + "!");
+        });
         appServer.get("/ping", ctx -> ctx.result("ok"));
         ServiceRegistry.configure(PersonDAO.class, new PersonDAOImpl());
         ServiceRegistry.configure(ExpenseDAO.class, new ExpenseDAOImpl());
