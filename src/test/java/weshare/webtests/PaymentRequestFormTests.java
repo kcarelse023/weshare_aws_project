@@ -20,7 +20,6 @@ import static weshare.model.DateHelper.TODAY;
 import static weshare.model.DateHelper.TOMORROW;
 import static weshare.model.MoneyHelper.amountOf;
 
-//@Disabled
 @DisplayName("For an expense")
 public class PaymentRequestFormTests extends WebTestRunner {
 

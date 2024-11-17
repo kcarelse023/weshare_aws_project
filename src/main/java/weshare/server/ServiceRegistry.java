@@ -43,8 +43,8 @@ public class ServiceRegistry{
      * @throws IllegalStateException if no instance of the requested class has been configured.
      */
     public static <K> K lookup(Class<K> serviceType) {
-        if (INSTANCE == null) throw new IllegalStateException("Lookup not initialised");
-        if (!INSTANCE.isGlobal) throw new IllegalStateException("Non-global Lookups should not use static methods.");
+        if (INSTANCE == null) throw new IllegalStateException("No service configured for");
+        if (!INSTANCE.isGlobal) throw new IllegalStateException("No service configured for");
 
         K service = INSTANCE.getServiceImpl(serviceType);
         if (service == null) throw new IllegalStateException("No service configured for " + serviceType);

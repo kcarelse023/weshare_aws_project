@@ -20,7 +20,6 @@ import static weshare.model.DateHelper.TODAY;
 import static weshare.model.DateHelper.TOMORROW;
 import static weshare.model.MoneyHelper.amountOf;
 
-//@Disabled
 @DisplayName("For the payment requests sent page")
 public class PaymentRequestsSentPageTests extends WebTestRunner {
     private final WebSession session = new WebSession(PaymentRequestsSentPageTests.this);
