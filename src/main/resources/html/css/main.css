@@ -1,0 +1,130 @@
+@font-face {
+    font-family: "OldHung";
+    src: url("old_london/OldLondon.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 1em;
+    font-family: "OldHung", fantasy;
+    font-size: 24px;  /* Increased body font size */
+    background-color: #FFC0A0;
+    width: 90%;
+    padding: 1em;
+    display: inline-block;
+}
+
+form {
+    padding: 20px;
+    width: 33%;
+    border-radius: 10px;
+    background-color: #FF00FF;
+    font-size: 20px;  /* Increased form font size */
+}
+
+form.inline {
+    padding: 0;
+    width: 33%;
+    background-color: #FA8072;
+    font-size: 20px;  /* Increased form.inline font size */
+}
+
+input.inline[type=submit] {
+    width: 100%;
+    background-color: #FF5733;
+    color: white;
+    padding: 8px;  /* Increased padding for larger input buttons */
+    margin: 4px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 20px;  /* Increased submit button font size */
+}
+
+input {
+    width: 100%;
+    padding: 14px 20px;  /* Increased input padding */
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 18px;  /* Increased input font size */
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 18px 20px;  /* Increased button padding */
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 22px;  /* Increased submit button font size */
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+}
+
+nav a {
+    display: block;
+    padding: 10px 20px;  /* Increased nav padding */
+    text-align: center;
+    color: #464141;
+    font-size: 22px;  /* Increased nav link font size */
+}
+
+nav a:hover {
+    background-color: #4CAF50;
+    color: #ffffff;
+}
+
+table {
+    table-layout: fixed;
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    font-size: 22px;  /* Increased table text size */
+}
+
+td {
+    padding: 1.5em;  /* Increased padding */
+    text-align: left;
+    font-size: 22px;  /* Increased table data font size */
+}
+
+th {
+    padding: 1.5em;  /* Increased padding */
+    text-align: left;
+    text-decoration: underline;
+    font-size: 24px;  /* Increased table header font size */
+}
+
+tfoot {
+    border-top: 1px solid black;
+    font-size: 26px;  /* Increased footer font size */
+    font-weight: bold;
+}
+
+div.error {
+    border: 1px solid #888;
+    padding: 30px;  /* Increased padding */
+    margin: 20px;
+    color: red;
+    width: 60%;
+    font-size: 24px;  /* Increased error message font size */
+}
+
+div.stacktrace {
+    font-size: 18px;  /* Slightly larger stacktrace font size */
+    font-family: monospace;
+}

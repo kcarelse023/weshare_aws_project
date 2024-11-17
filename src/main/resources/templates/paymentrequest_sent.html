@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{/layout.html}">
+<head></head>
+<body>
+<div layout:fragment="contents">
+<h3>People that owe me</h3>
+<p id= "no_payment_requests_sent" th:if="${#lists.isEmpty(requests)}">
+    Nobody owes you anything!
+</p>
+<div id="paymentrequest_sent" th:unless="${#lists.isEmpty(requests)}">
+<table>
+    <thead>
+    <tr>
+    <th>who</th>
+    <th>What</th>
+    <th>Due in (days)</th>
+    <th>How Much</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="requests : ${requests}">
+        <tr>
+        <td th:attr="id='date_' + ${requests.id}">
+            <span th:text="${requests.personWhoShouldPayBack.email}">05/09/2022</span>
+        </td>
+        <td><a  th:attr="id='description_' + ${requests.id}"
+                th:text="${requests.expense.description}">
+        </a>
+        </td>
+        <td th:attr="id='amount_' + ${requests.id}">
+            <span th:text="${requests.daysLeftToPay()}">ZAR 0.00</span>
+        </td>
+        <td th:attr="id='payment_request_' + ${requests.id}">
+            <span th:text="${requests.amountToPay}">ZAR 0.00</span>
+        </td>
+        </tr>
+    </th:block>
+    </tbody>
+    <tfoot>
+    <tr>
+    <td colspan="2"><strong>Grand Total</strong></td>
+    <td colspan="4">
+    <div th:attr="id='grand_total'">
+        <span th:text="${grandTotal}">0.00</span>
+    </div>
+    </td>
+    </tr>
+    </tfoot>
+</table>
+</div>
+</div>
+
+</body>
+</html>
