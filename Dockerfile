@@ -12,7 +12,7 @@ RUN mvn clean package -DskipTests
 RUN ls -a
 
 # Expose the port the application will run on
-EXPOSE 80
+EXPOSE 5050
 
 # Step 2: Don't run the application explicitly here
 # Comment out or remove the CMD line
