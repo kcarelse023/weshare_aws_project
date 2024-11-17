@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Compile the application (skip tests if necessary)
-RUN mvn clean package -DskipTests
+# RUN mvn clean package -DskipTests
 RUN ls -a
 
 # Expose the port the application will run on
