@@ -62,7 +62,7 @@ public class WeShareServer {
             e.printStackTrace(pw);
             ctx.result(sw.toString());
         });
-        appServer.get("/hello/:name", ctx -> {
+        appServer.get("/hello/{name}", ctx -> {
             String name = ctx.pathParam("name");
             ctx.result("Hello, " + name + "!");
         });
