@@ -120,7 +120,7 @@ public class WeShareServer {
     }
 
     public void start(int port) {
-        this.appServer.start(port);
+        this.appServer.start("0.0.0.0",port);
     }
 
     public void stop() {
