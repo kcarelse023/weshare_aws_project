@@ -68,7 +68,7 @@ public class WeShareServer {
 
 
 
-        server.start(5050);
+        server.start(80);
     }
 
     @Nullable
